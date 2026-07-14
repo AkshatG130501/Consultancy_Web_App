@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
@@ -118,6 +118,24 @@ export function HeroCarousel() {
             </div>
           ))}
         </div>
+
+        {/* Prev/next controls */}
+        <button
+          type="button"
+          onClick={() => setActive((i) => (i - 1 + count) % count)}
+          aria-label="Previous slide"
+          className="absolute top-1/2 left-3 z-10 flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-navy-950/30 text-white backdrop-blur-sm transition-colors hover:border-gold-500 hover:bg-navy-950/50 sm:left-5"
+        >
+          <ChevronLeft className="size-5" />
+        </button>
+        <button
+          type="button"
+          onClick={() => setActive((i) => (i + 1) % count)}
+          aria-label="Next slide"
+          className="absolute top-1/2 right-3 z-10 flex size-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-navy-950/30 text-white backdrop-blur-sm transition-colors hover:border-gold-500 hover:bg-navy-950/50 sm:right-5"
+        >
+          <ChevronRight className="size-5" />
+        </button>
 
         {/* Dots */}
         <div className="absolute bottom-6 left-1/2 z-10 flex -translate-x-1/2 items-center gap-3">
