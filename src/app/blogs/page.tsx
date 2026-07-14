@@ -6,19 +6,19 @@ import { InsightCard } from "@/components/cards/InsightCard";
 import { insights } from "@/lib/data/insights";
 
 export const metadata: Metadata = {
-  title: "Insights",
+  title: "Blogs",
   description:
     "Perspectives on executive search, back-office operations, and financial advisory from the Northbridge Advisory team.",
 };
 
-export default function InsightsPage() {
+export default function BlogsPage() {
   return (
     <>
       <PageHero
-        eyebrow="Insights"
+        eyebrow="Blogs"
         title="Perspectives from the field"
         description="Practical notes from our executive search, back-office, and advisory teams — grounded in live mandates, not theory."
-        crumbs={[{ label: "Insights" }]}
+        crumbs={[{ label: "Blogs" }]}
         image="/page/insights.jpg"
       />
 

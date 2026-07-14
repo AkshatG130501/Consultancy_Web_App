@@ -6,7 +6,7 @@ import { formatDate } from "@/lib/format-date";
 export function InsightCard({ insight }: { insight: Insight }) {
   return (
     <Link
-      href={`/insights/${insight.slug}`}
+      href={`/blogs/${insight.slug}`}
       className="group flex flex-col rounded-2xl border border-navy-950/8 bg-white p-7 transition-all hover:-translate-y-1 hover:border-gold-500/40 hover:shadow-xl hover:shadow-navy-950/5"
     >
       <span className="inline-flex w-fit items-center rounded-full bg-gold-100 px-3 py-1 text-xs font-semibold text-gold-700">

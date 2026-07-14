@@ -1,4 +1,7 @@
-export type TeamGroup = "Leadership" | "Management Consulting" | "Finance & Advisory";
+export type TeamGroup =
+  | "Leadership"
+  | "Management Consulting"
+  | "Finance & Advisory";
 
 export type TeamMember = {
   slug: string;
@@ -14,24 +17,24 @@ export type TeamMember = {
 export const team: TeamMember[] = [
   // Leadership
   {
-    slug: "arjun-vashisht",
-    name: "Arjun Vashisht",
+    slug: "tushar-vir",
+    name: "Tushar Vir",
     role: "Founder & Managing Partner",
     group: "Leadership",
-    bio: "Arjun founded Northbridge Advisory in 2012 after a decade in corporate finance across India, East Africa, and Central Europe. He is a Chartered Accountant and has led debt syndication and M&A mandates totalling more than USD 250 million.",
+    bio: "Tushar founded Northbridge Advisory in 2012 after a decade in corporate finance across India, East Africa, and Central Europe. He is a Chartered Accountant and has led debt syndication and M&A mandates totalling more than USD 250 million.",
     focus: "Corporate finance, M&A, capital raising",
-    initials: "AV",
-    image: "/team/arjun-vashisht.jpg",
+    initials: "TV",
+    image: "/team/tushar-vir.jpg",
   },
   {
-    slug: "leela-ramchandani",
-    name: "Leela Ramchandani",
-    role: "Partner, Client & People",
+    slug: "vikrant-khandelwal",
+    name: "Vikrant Khandelwal",
+    role: "Founder & Managing Partner",
     group: "Leadership",
-    bio: "Leela leads client relationships and internal talent development. A graduate of Delhi University with postgraduate training in organisational communication, she has worked across European, Asian, and African client mandates for over a decade.",
+    bio: "Vikrant leads client relationships and internal talent development. A graduate of Delhi University with postgraduate training in organisational communication, he has worked across European, Asian, and African client mandates for over a decade.",
     focus: "Client strategy, quality control, team development",
-    initials: "LR",
-    image: "/team/leela-ramchandani.jpg",
+    initials: "VK",
+    image: "/team/vikrant-khandelwal.jpg",
   },
   {
     slug: "devraj-oberoi",

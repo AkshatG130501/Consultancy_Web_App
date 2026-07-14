@@ -2,7 +2,7 @@ import Link from "next/link";
 import { MapPin, Mail, Phone } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/ui/Logo";
-import { LinkedinIcon, InstagramIcon, YoutubeIcon } from "@/components/ui/SocialIcons";
+import { LinkedinIcon, InstagramIcon, WhatsappIcon } from "@/components/ui/SocialIcons";
 import { site, footerServiceLinks, footerCompanyLinks } from "@/lib/data/site";
 
 export function Footer() {
@@ -34,13 +34,13 @@ export function Footer() {
                 <InstagramIcon className="size-4" />
               </a>
               <a
-                href={site.social.youtube}
+                href={site.social.whatsapp}
                 target="_blank"
                 rel="noreferrer noopener"
-                aria-label="YouTube"
+                aria-label="WhatsApp"
                 className="flex size-9 items-center justify-center rounded-full border border-navy-950/15 text-navy-700 transition-colors hover:border-gold-500 hover:text-gold-600"
               >
-                <YoutubeIcon className="size-4" />
+                <WhatsappIcon className="size-4" />
               </a>
             </div>
           </div>

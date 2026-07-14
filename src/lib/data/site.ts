@@ -17,7 +17,7 @@ export const site = {
   social: {
     linkedin: "https://www.linkedin.com/company/northbridge-advisory",
     instagram: "https://www.instagram.com/northbridgeadvisory",
-    youtube: "https://www.youtube.com/@northbridgeadvisory",
+    whatsapp: "https://wa.me/911244567890",
   },
   regions: ["Africa", "Middle East", "Southeast Asia", "South Asia"],
   stats: [
@@ -71,8 +71,8 @@ export const primaryNav: NavItem[] = [
     href: "/team",
   },
   {
-    title: "Insights",
-    href: "/insights",
+    title: "Blogs",
+    href: "/blogs",
   },
   {
     title: "Careers",
@@ -94,7 +94,7 @@ export const footerServiceLinks = [
 export const footerCompanyLinks = [
   { title: "About Us", href: "/about" },
   { title: "Our Team", href: "/team" },
-  { title: "Insights", href: "/insights" },
+  { title: "Blogs", href: "/blogs" },
   { title: "Careers", href: "/careers" },
   { title: "Contact", href: "/contact" },
 ];

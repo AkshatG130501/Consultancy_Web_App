@@ -10,14 +10,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about",
     "/team",
     "/services",
-    "/insights",
+    "/blogs",
     "/careers",
     "/contact",
   ];
 
   const dynamicRoutes = [
     ...services.map((s) => `/services/${s.slug}`),
-    ...insights.map((i) => `/insights/${i.slug}`),
+    ...insights.map((i) => `/blogs/${i.slug}`),
     ...jobs.map((j) => `/careers/${j.slug}`),
   ];
 

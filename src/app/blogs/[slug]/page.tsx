@@ -43,7 +43,7 @@ export default async function InsightDetailPage({
         eyebrow={insight.category}
         title={insight.title}
         description={`${formatDate(insight.date)} · ${insight.readTime} · By ${insight.author}`}
-        crumbs={[{ label: "Insights", href: "/insights" }, { label: insight.title }]}
+        crumbs={[{ label: "Blogs", href: "/blogs" }, { label: insight.title }]}
       />
 
       <section className="bg-white py-20">

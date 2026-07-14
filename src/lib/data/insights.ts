@@ -50,7 +50,7 @@ export const insights: Insight[] = [
     category: "Financing",
     date: "2026-03-30",
     readTime: "7 min read",
-    author: "Arjun Vashisht",
+    author: "Tushar Vir",
     content: [
       "Businesses expanding into a new market for the first time usually default to whichever financing route their existing bank offers — which is rarely the best fit for the risk profile of a market-entry project.",
       "Development finance institutions offer a lower cost of capital and a reputational signal that helps with subsequent fundraising, but their underwriting timelines are longer and their documentation standards are exacting. Export credit agencies suit longer-tenor equipment financing well but are a poor fit for working capital needs.",
@@ -66,7 +66,7 @@ export const insights: Insight[] = [
     category: "Company News",
     date: "2026-02-14",
     readTime: "2 min read",
-    author: "Leela Ramchandani",
+    author: "Vikrant Khandelwal",
     content: [
       "We're pleased to announce that Samuel Okafor has joined Northbridge Advisory as West Africa Regional Lead, based out of our Lagos coverage team.",
       "Samuel brings more than 25 years of HR and operations leadership experience across manufacturing and FMCG businesses in Nigeria, Ghana, and the wider ECOWAS region — deep, operator-level knowledge that strengthens our executive search practice across the region.",
@@ -81,7 +81,7 @@ export const insights: Insight[] = [
     category: "Company News",
     date: "2026-01-09",
     readTime: "3 min read",
-    author: "Arjun Vashisht",
+    author: "Tushar Vir",
     content: [
       "Twelve years ago, Northbridge Advisory started as a two-person finance consulting practice working with a handful of clients across India and East Africa. Today we work with more than 300 clients across 40+ countries.",
       "Every mandate we've taken on — from a single payroll engagement to a nine-figure financing structure — has taught us something that shaped how we run the next one. That compounding is the actual asset of a firm like ours; it's not replicable by scale alone.",
