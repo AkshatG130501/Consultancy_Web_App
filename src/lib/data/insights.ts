@@ -60,7 +60,7 @@ export const insights: Insight[] = [
   },
   {
     slug: "welcome-samuel-okafor",
-    title: "Welcome to Northbridge, Samuel Okafor",
+    title: "Welcome to ScaleBridge, Samuel Okafor",
     excerpt:
       "We're pleased to welcome Samuel Okafor as our new West Africa Regional Lead, bringing over 25 years of HR and operations leadership to the team.",
     category: "Company News",
@@ -68,7 +68,7 @@ export const insights: Insight[] = [
     readTime: "2 min read",
     author: "Vikrant Khandelwal",
     content: [
-      "We're pleased to announce that Samuel Okafor has joined Northbridge Advisory as West Africa Regional Lead, based out of our Lagos coverage team.",
+      "We're pleased to announce that Samuel Okafor has joined ScaleBridge Global as West Africa Regional Lead, based out of our Lagos coverage team.",
       "Samuel brings more than 25 years of HR and operations leadership experience across manufacturing and FMCG businesses in Nigeria, Ghana, and the wider ECOWAS region — deep, operator-level knowledge that strengthens our executive search practice across the region.",
       "His arrival reflects our continued investment in on-the-ground presence across the markets we serve, rather than running regional mandates from a single hub.",
     ],
@@ -83,7 +83,7 @@ export const insights: Insight[] = [
     readTime: "3 min read",
     author: "Tushar Vir",
     content: [
-      "Twelve years ago, Northbridge Advisory started as a two-person finance consulting practice working with a handful of clients across India and East Africa. Today we work with more than 300 clients across 40+ countries.",
+      "Twelve years ago, ScaleBridge Global started as a two-person finance consulting practice working with a handful of clients across India and East Africa. Today we work with more than 300 clients across 40+ countries.",
       "Every mandate we've taken on — from a single payroll engagement to a nine-figure financing structure — has taught us something that shaped how we run the next one. That compounding is the actual asset of a firm like ours; it's not replicable by scale alone.",
       "To every client who trusted us with a mandate, and every colleague who's built this practice with us: thank you. Twelve years in, we're just getting started.",
     ],
@@ -93,7 +93,7 @@ export const insights: Insight[] = [
     title: "Reducing borrowing costs without changing your bank",
     excerpt:
       "Financial re-engineering is often mistaken for refinancing. The two aren't the same, and the first is usually faster and cheaper to execute.",
-    category: "Advisory",
+    category: "Corporate Advisory",
     date: "2025-12-11",
     readTime: "5 min read",
     author: "Karan Thakkar",

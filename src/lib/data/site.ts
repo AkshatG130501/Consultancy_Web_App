@@ -1,23 +1,25 @@
 export const site = {
-  name: "Northbridge Advisory",
-  shortName: "Northbridge",
-  tagline: "Clarity in complexity",
+  name: "ScaleBridge Global",
+  shortName: "ScaleBridge",
+  tagline: "Empowering Businesses. Beyond Borders.",
   description:
-    "Northbridge Advisory is a boutique management consulting firm helping ambitious businesses across global emerging markets scale with confidence — through executive search, back-office operations, and strategic CFO advisory.",
-  url: "https://www.northbridgeadvisory.com",
+    "ScaleBridge Global is a boutique management consulting firm helping ambitious businesses across global emerging markets scale with confidence — through executive search, back-office operations, and strategic CFO advisory.",
+  url: "https://www.scalebridgeglobal.com",
   founded: 2012,
-  email: "hello@northbridgeadvisory.com",
-  careersEmail: "careers@northbridgeadvisory.com",
-  phone: "+91 124 456 7890",
+  email: "khandelwalvikrant1@gmail.com",
+  careersEmail: "careers@scalebridgeglobal.com",
+  phone: "+91 89553 14742",
   address: {
-    line1: "Tower B, Cyber Hub",
-    line2: "Sector 24, Gurugram",
-    line3: "Haryana 122002, India",
+    line1: "5/10 Malviya Nagar, Amit Bhardwaj Marg",
+    line2: "Jaipur, Rajasthan",
+    line3: "India, 302017",
   },
   social: {
-    linkedin: "https://www.linkedin.com/company/northbridge-advisory",
-    instagram: "https://www.instagram.com/northbridgeadvisory",
-    whatsapp: "https://wa.me/911244567890",
+    linkedin: "https://www.linkedin.com/company/scalebridge-global",
+    instagram: "https://www.instagram.com/scalebridgeglobal",
+    whatsapp: "https://wa.me/918955314742",
+    youtube: "https://www.youtube.com/@scalebridgeglobal",
+    twitter: "https://x.com/scalebridgeglobal",
   },
   regions: ["Africa", "Middle East", "Southeast Asia", "South Asia"],
   stats: [
@@ -50,33 +52,38 @@ export const primaryNav: NavItem[] = [
     href: "/services",
     children: [
       {
-        title: "Executive Search & RPO",
+        title: "Executive Search",
         slug: "executive-search",
         description: "Leadership hiring and recruitment process outsourcing",
       },
       {
-        title: "Back-Office Solutions",
+        title: "Back Office Establishment",
         slug: "back-office",
-        description: "Accounting, payroll, and management audit",
+        description: "Finance, HR, payroll, compliance, and shared services",
       },
       {
-        title: "CFO & Advisory Services",
+        title: "Virtual CFO",
         slug: "advisory",
-        description: "Fractional CFO, financing, and corporate strategy",
+        description: "Fractional CFO leadership, reporting, and financing",
+      },
+      {
+        title: "Corporate Advisory",
+        slug: "corporate-advisory",
+        description: "Growth strategy, transformation, and restructuring",
       },
     ],
-  },
-  {
-    title: "Team",
-    href: "/team",
   },
   {
     title: "Blogs",
     href: "/blogs",
   },
   {
-    title: "Careers",
+    title: "Jobs",
     href: "/careers",
+  },
+  {
+    title: "Contact Us",
+    href: "/contact",
   },
 ];
 
@@ -88,7 +95,10 @@ export const footerServiceLinks = [
   { title: "Corporate Advisory", href: "/services/corporate-advisory" },
   { title: "Financing & Capital Raise", href: "/services/financing" },
   { title: "Mergers & Acquisitions", href: "/services/mergers-acquisitions" },
-  { title: "Emerging Markets Advisory", href: "/services/emerging-markets-advisory" },
+  {
+    title: "Emerging Markets Advisory",
+    href: "/services/emerging-markets-advisory",
+  },
 ];
 
 export const footerCompanyLinks = [
@@ -97,4 +107,15 @@ export const footerCompanyLinks = [
   { title: "Blogs", href: "/blogs" },
   { title: "Careers", href: "/careers" },
   { title: "Contact", href: "/contact" },
+];
+
+export const footerQuickLinks = [
+  { title: "About Us", href: "/about" },
+  { title: "Executive Search", href: "/services/executive-search" },
+  { title: "Virtual CFO", href: "/services/advisory" },
+  { title: "Back Office", href: "/services/back-office" },
+  { title: "Corporate Advisory", href: "/services/corporate-advisory" },
+  { title: "Blog", href: "/blogs" },
+  { title: "Jobs", href: "/careers" },
+  { title: "Contact Us", href: "/contact" },
 ];

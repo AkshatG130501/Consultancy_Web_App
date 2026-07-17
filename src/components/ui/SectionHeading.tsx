@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 export function SectionHeading({
@@ -7,13 +8,15 @@ export function SectionHeading({
   align = "left",
   className,
   titleClassName,
+  descriptionClassName,
 }: {
   eyebrow?: string;
-  title: string;
+  title?: ReactNode;
   description?: string;
   align?: "left" | "center";
   className?: string;
   titleClassName?: string;
+  descriptionClassName?: string;
 }) {
   return (
     <div
@@ -44,7 +47,12 @@ export function SectionHeading({
         {title}
       </h2>
       {description && (
-        <p className="mt-4 text-base leading-relaxed text-navy-700/80">
+        <p
+          className={cn(
+            "mt-4 text-base leading-relaxed text-navy-700/80",
+            descriptionClassName,
+          )}
+        >
           {description}
         </p>
       )}

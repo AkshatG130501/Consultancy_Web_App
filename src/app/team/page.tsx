@@ -8,7 +8,7 @@ import { getTeamByGroup } from "@/lib/data/team";
 export const metadata: Metadata = {
   title: "Team",
   description:
-    "Meet the leadership behind Northbridge Advisory's mandates across Africa, the Middle East, and Asia.",
+    "Meet the leadership behind ScaleBridge Global's mandates across Africa, the Middle East, and Asia.",
 };
 
 export default function TeamPage() {

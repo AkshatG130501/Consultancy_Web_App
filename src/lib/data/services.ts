@@ -57,7 +57,7 @@ export const services: Service[] = [
       "We help transform your organisation with the right hires — from C-suite to specialist talent.",
     heroTagline: "Build the leadership team your growth deserves.",
     summary:
-      "Northbridge Advisory identifies and places leadership and specialist talent for organisations operating across Africa, the Middle East, and Asia. We combine deep sector networks with a rigorous, reference-checked screening process to place candidates who perform from day one.",
+      "ScaleBridge Global identifies and places leadership and specialist talent for organisations operating across Africa, the Middle East, and Asia. We combine deep sector networks with a rigorous, reference-checked screening process to place candidates who perform from day one.",
     sections: [
       {
         heading: "Leadership hiring, done properly",
@@ -269,7 +269,7 @@ export const services: Service[] = [
       },
       {
         heading: "A team, not one person",
-        body: "Engaging Northbridge gives you access to a team spanning corporate advisory, financing, M&A, and financial re-engineering — versus the single point of failure (and single skill set) of one in-house CFO hire.",
+        body: "Engaging ScaleBridge gives you access to a team spanning corporate advisory, financing, M&A, and financial re-engineering — versus the single point of failure (and single skill set) of one in-house CFO hire.",
       },
       {
         heading: "Six specialist services",

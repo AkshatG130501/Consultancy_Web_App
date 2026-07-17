@@ -8,7 +8,7 @@ import { jobs } from "@/lib/data/jobs";
 export const metadata: Metadata = {
   title: "Careers",
   description:
-    "Open roles at Northbridge Advisory and with our clients across Africa, the Middle East, and Asia.",
+    "Open roles at ScaleBridge Global and with our clients across Africa, the Middle East, and Asia.",
 };
 
 export default function CareersPage() {

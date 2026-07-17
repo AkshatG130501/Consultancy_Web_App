@@ -2,8 +2,20 @@ import Link from "next/link";
 import { MapPin, Mail, Phone } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/ui/Logo";
-import { LinkedinIcon, InstagramIcon, WhatsappIcon } from "@/components/ui/SocialIcons";
-import { site, footerServiceLinks, footerCompanyLinks } from "@/lib/data/site";
+import {
+  LinkedinIcon,
+  InstagramIcon,
+  WhatsappIcon,
+  YoutubeIcon,
+  TwitterIcon,
+} from "@/components/ui/SocialIcons";
+import { site, footerQuickLinks } from "@/lib/data/site";
+
+const footerRegions = [
+  { name: "Asia", slug: "asia" },
+  { name: "Africa", slug: "africa" },
+  { name: "Middle East", slug: "middle-east" },
+];
 
 export function Footer() {
   const year = 2026;
@@ -11,8 +23,8 @@ export function Footer() {
   return (
     <footer className="border-t border-navy-950/10 bg-cream-100 text-navy-800">
       <Container className="py-16">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
-          <div>
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.2fr_1.1fr_1fr_1.4fr]">
+          <div className="flex w-fit flex-col items-center">
             <Logo variant="dark" size="xl" />
             <div className="mt-6 flex items-center gap-3">
               <a
@@ -42,43 +54,25 @@ export function Footer() {
               >
                 <WhatsappIcon className="size-4" />
               </a>
+              <a
+                href={site.social.youtube}
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label="YouTube"
+                className="flex size-9 items-center justify-center rounded-full border border-navy-950/15 text-navy-700 transition-colors hover:border-gold-500 hover:text-gold-600"
+              >
+                <YoutubeIcon className="size-4" />
+              </a>
+              <a
+                href={site.social.twitter}
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label="X (Twitter)"
+                className="flex size-9 items-center justify-center rounded-full border border-navy-950/15 text-navy-700 transition-colors hover:border-gold-500 hover:text-gold-600"
+              >
+                <TwitterIcon className="size-4" />
+              </a>
             </div>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold tracking-wide text-gold-600 uppercase">
-              Company
-            </h3>
-            <ul className="mt-4 space-y-3">
-              {footerCompanyLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-navy-700 transition-colors hover:text-navy-950"
-                  >
-                    {link.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold tracking-wide text-gold-600 uppercase">
-              Services
-            </h3>
-            <ul className="mt-4 space-y-3">
-              {footerServiceLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-navy-700 transition-colors hover:text-navy-950"
-                  >
-                    {link.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
           </div>
 
           <div>
@@ -106,6 +100,42 @@ export function Footer() {
                   {site.phone}
                 </a>
               </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-semibold tracking-wide text-gold-600 uppercase">
+              Quick Links
+            </h3>
+            <ul className="mt-4 space-y-3">
+              {footerQuickLinks.map((link) => (
+                <li key={link.title}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-navy-700 transition-colors hover:text-navy-950"
+                  >
+                    {link.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-semibold tracking-wide text-gold-600 uppercase">
+              Latest Blogs
+            </h3>
+            <ul className="mt-4 space-y-3">
+              {footerRegions.map((region) => (
+                <li key={region.name}>
+                  <Link
+                    href={`/blogs?region=${region.slug}`}
+                    className="text-sm text-navy-700 transition-colors hover:text-navy-950"
+                  >
+                    {region.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

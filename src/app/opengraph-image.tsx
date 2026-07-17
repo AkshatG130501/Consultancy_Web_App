@@ -45,7 +45,7 @@ export default async function OpengraphImage() {
               textTransform: "uppercase",
             }}
           >
-            {`${site.shortName} Advisory`}
+            {site.name}
           </span>
         </div>
         <div
@@ -58,7 +58,7 @@ export default async function OpengraphImage() {
             maxWidth: 900,
           }}
         >
-          {`${site.tagline} for ambitious businesses.`}
+          {site.tagline}
         </div>
         <div
           style={{

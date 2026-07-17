@@ -1,13 +1,11 @@
+import { IntroSection } from "@/components/sections/IntroSection";
 import { HeroCarousel } from "@/components/sections/HeroCarousel";
-import { USP } from "@/components/sections/USP";
-import { CTABand } from "@/components/sections/CTABand";
 
 export default function Home() {
   return (
     <>
+      <IntroSection />
       <HeroCarousel />
-      <USP />
-      <CTABand />
     </>
   );
 }
