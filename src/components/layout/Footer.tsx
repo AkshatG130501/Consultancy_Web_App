@@ -21,7 +21,7 @@ export function Footer() {
   const year = 2026;
 
   return (
-    <footer className="border-t border-navy-950/10 bg-cream-100 text-navy-800">
+    <footer className="border-t border-navy-950/10 bg-white text-navy-800">
       <Container className="py-16">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.2fr_1.1fr_1fr_1.4fr]">
           <div className="flex w-fit flex-col items-center">

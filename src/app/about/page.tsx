@@ -262,12 +262,12 @@ function OurStory() {
 
 function Differentiators() {
   return (
-    <section className="bg-cream-100 py-24">
+    <section className="bg-white py-24">
       <Container className="grid grid-cols-1 items-start gap-14 lg:grid-cols-2 lg:gap-20">
         {/* Left: heading + points — this column scrolls */}
         <div>
           <SectionHeading
-            eyebrow="Our USPs"
+            eyebrow="Our USP"
             descriptionClassName="text-justify"
           />
           <div className="mt-10 space-y-8">
@@ -338,7 +338,7 @@ function Methodology() {
             description="Every engagement follows the same disciplined path — from understanding your business to sustaining the results long after delivery."
             descriptionClassName="text-justify"
           />
-          <ol className="mt-10 space-y-8">
+          <ol className="mt-10 space-y-4">
             {methodology.map((step) => (
               <li key={step.title}>
                 <h3 className="font-serif-display text-2xl font-medium text-navy-950">
@@ -407,7 +407,7 @@ function GlobalPresence() {
 
 function Industries() {
   return (
-    <section className="bg-cream-100 py-24">
+    <section className="bg-white py-24">
       <Container className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-20">
         <div className="relative lg:order-2">
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-xl shadow-navy-950/10 ring-1 ring-navy-950/10">
@@ -488,7 +488,7 @@ function WhyChooseUs() {
 
 function Vision() {
   return (
-    <section className="bg-cream-100 py-24">
+    <section className="bg-white py-24">
       <Container className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-20">
         <div>
           <p className="mb-3 flex items-center gap-2 text-sm font-semibold tracking-wide text-gold-600 uppercase">
@@ -573,7 +573,7 @@ const founders = [
 
 function Founders() {
   return (
-    <section className="bg-cream-100 py-24">
+    <section className="bg-white py-24">
       <Container>
         <SectionHeading
           align="center"
