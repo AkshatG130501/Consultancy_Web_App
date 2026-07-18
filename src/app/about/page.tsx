@@ -335,6 +335,7 @@ function Methodology() {
           <SectionHeading
             eyebrow="Our methodology"
             title="A structured, yet flexible framework"
+            titleClassName="text-2xl sm:text-3xl sm:whitespace-nowrap"
             description="Every engagement follows the same disciplined path — from understanding your business to sustaining the results long after delivery."
             descriptionClassName="text-justify"
           />
