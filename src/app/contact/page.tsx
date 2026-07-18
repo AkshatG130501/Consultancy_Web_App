@@ -9,7 +9,7 @@ import { site } from "@/lib/data/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with ScaleBridge Global for executive search, back-office, or CFO advisory mandates.",
+    "Get in touch with ScaleBridge Global for talent acquisition, back-office, or CFO advisory mandates.",
 };
 
 export default function ContactPage() {

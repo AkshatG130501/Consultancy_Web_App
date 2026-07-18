@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { PageHero } from "@/components/sections/PageHero";
 import { CTABand } from "@/components/sections/CTABand";
-import { InsightCard } from "@/components/cards/InsightCard";
-import { insights } from "@/lib/data/insights";
+import { BlogFilter } from "@/components/sections/BlogFilter";
+import { insights, blogCategories } from "@/lib/data/insights";
 
 export const metadata: Metadata = {
   title: "Blogs",
   description:
-    "Perspectives on executive search, back-office operations, and financial advisory from the ScaleBridge Global team.",
+    "Perspectives on talent acquisition, back-office operations, and financial advisory from the ScaleBridge Global team.",
 };
 
 export default function BlogsPage() {
@@ -17,18 +17,14 @@ export default function BlogsPage() {
       <PageHero
         eyebrow="Blogs"
         title="Perspectives from the field"
-        description="Practical notes from our executive search, back-office, and advisory teams — grounded in live mandates, not theory."
+        description="Practical notes from our talent acquisition, back-office, and advisory teams — grounded in live mandates, not theory."
         crumbs={[{ label: "Blogs" }]}
         image="/page/insights.jpg"
       />
 
       <section className="bg-white py-24">
         <Container>
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {insights.map((insight) => (
-              <InsightCard key={insight.slug} insight={insight} />
-            ))}
-          </div>
+          <BlogFilter insights={insights} categories={blogCategories} />
         </Container>
       </section>
 

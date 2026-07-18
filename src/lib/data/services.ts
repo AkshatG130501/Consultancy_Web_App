@@ -1,8 +1,19 @@
-export type ServiceCategory = "executive-search" | "back-office" | "advisory";
+export type ServiceCategory = "talent-acquisition" | "back-office" | "advisory";
 
 export type ServiceSection = {
   heading: string;
   body: string;
+};
+
+export type ServiceOffering = {
+  title: string;
+  description: string;
+  points: string[];
+};
+
+export type ProcessStep = {
+  title: string;
+  description: string;
 };
 
 export type Service = {
@@ -14,20 +25,37 @@ export type Service = {
   title: string;
   shortDescription: string;
   heroTagline: string;
+  /** When set, the detail page renders a full-bleed image hero instead of PageHero. */
+  heroImage?: string;
+  /** Background focal point for the image hero (e.g. "top"); defaults to center. */
+  heroImagePosition?: string;
+  /** Large stacked headline for the image hero (defaults to `title`). */
+  heroTitle?: string;
+  /** Muted sub-line shown under the image-hero headline. */
+  heroSubtitle?: string;
   summary: string;
   sections: ServiceSection[];
+  /** Optional "Our Services" block: grouped offerings, each with bullet points. */
+  serviceOfferings?: ServiceOffering[];
   benefits: string[];
-  processSteps?: string[];
+  processSteps?: ProcessStep[];
   relatedSlugs: string[];
+  /** Static informational cards shown in the "Related" section (offerings without their own page). */
+  relatedCards?: {
+    icon: string;
+    title: string;
+    description: string;
+    href?: string;
+  }[];
 };
 
 export const serviceCategories: Record<
   ServiceCategory,
   { title: string; slug: string; description: string }
 > = {
-  "executive-search": {
-    title: "Executive Search & RPO",
-    slug: "executive-search",
+  "talent-acquisition": {
+    title: "Talent Acquisition & RPO",
+    slug: "talent-acquisition",
     description:
       "Leadership hiring, recruitment process outsourcing, and specialist talent placement across emerging markets.",
   },
@@ -46,34 +74,52 @@ export const serviceCategories: Record<
 };
 
 export const services: Service[] = [
-  // ---------------- PILLAR: EXECUTIVE SEARCH ----------------
+  // ---------------- PILLAR: TALENT ACQUISITION ----------------
   {
-    slug: "executive-search",
-    category: "executive-search",
+    slug: "talent-acquisition",
+    category: "talent-acquisition",
     pillar: true,
     icon: "Users",
-    title: "Executive Search & RPO",
+    title: "Talent Acquisition & RPO",
     shortDescription:
       "We help transform your organisation with the right hires — from C-suite to specialist talent.",
     heroTagline: "Build the leadership team your growth deserves.",
+    heroImage: "/hero/executive-search.jpg",
+    heroTitle: "Talent Acquisition",
+    heroSubtitle: "Fulfilling Leadership. Building Futures.",
     summary:
-      "ScaleBridge Global identifies and places leadership and specialist talent for organisations operating across Africa, the Middle East, and Asia. We combine deep sector networks with a rigorous, reference-checked screening process to place candidates who perform from day one.",
-    sections: [
+      "We recruit across the C-suite (CEO, CFO, COO, CHRO, CXO) as well as senior and mid-level management, covering commercial, finance, marketing, HR, supply chain, and technology functions.FMCG, oil & gas, textiles and apparel, construction and infrastructure, retail, telecom, agri-tech, fintech, logistics, and healthcare, among others. We do not take a mandate outside our network's depth — and we tell you when that's the case.",
+    sections: [],
+    serviceOfferings: [
       {
-        heading: "Leadership hiring, done properly",
-        body: "We recruit across the C-suite (CEO, CFO, COO, CHRO, CXO) as well as senior and mid-level management, covering commercial, finance, marketing, HR, supply chain, and technology functions. Every mandate is led by a consultant who has personally worked in the sector, not a generalist reading a job description.",
+        title: "Talent Acquisition",
+        description:
+          "End-to-end recruitment support for client businesses — sourcing, screening and shortlisting candidates for finance, accounts, sales and operations roles.",
+        points: [
+          "Role-specific candidate sourcing and screening",
+          "Structured shortlist with interview-ready profiles",
+          "Support through offer negotiation and onboarding",
+        ],
       },
       {
-        heading: "Recruitment Process Outsourcing",
-        body: "For clients scaling headcount quickly, we embed as an extension of your HR team — owning sourcing, screening, and coordination end-to-end while you retain final hiring authority. This is particularly effective for retail, FMCG, and manufacturing businesses opening new markets.",
+        title: "Virtual Talent Provision",
+        description:
+          "Supplying pre-vetted remote professionals (accountants, analysts, admin support) that client businesses can engage flexibly without the overhead of a full-time hire.",
+        points: [
+          "On-demand access to trained remote staff",
+          "Flexible engagement — part-time, project-based or full-time",
+          "Lower fixed-cost burden for small and mid-size clients",
+        ],
       },
       {
-        heading: "Cross-border and expatriate placement",
-        body: "We maintain an active, continuously refreshed database of internationally mobile candidates and manage the added complexity of relocation, visa sponsorship, and cultural onboarding — a common blind spot for firms hiring across borders for the first time.",
-      },
-      {
-        heading: "Sector depth",
-        body: "FMCG, oil & gas, textiles and apparel, construction and infrastructure, retail, telecom, agri-tech, fintech, logistics, and healthcare, among others. We do not take a mandate outside our network's depth — and we tell you when that's the case.",
+        title: "Contractual Services",
+        description:
+          "Structured, time-bound engagements where our team executes a defined scope of work (accounting clean-up, compliance filing, process documentation) under a fixed contract.",
+        points: [
+          "Clearly scoped deliverables and timelines",
+          "Fixed-fee or milestone-based pricing",
+          "Lower commitment risk than permanent hiring",
+        ],
       },
     ],
     benefits: [
@@ -84,16 +130,47 @@ export const services: Service[] = [
       "Typical shortlist delivery within 10 working days of mandate kick-off",
     ],
     processSteps: [
-      "Discovery call to align on the role, mandate, and organisational context",
-      "Job description and compensation benchmarking",
-      "Confidential market mapping and headhunting",
-      "Structured screening and competency interviews",
-      "Client interviews and shortlist presentation",
-      "Reference checks and background verification",
-      "Offer structuring and negotiation support",
-      "Visa, relocation, and onboarding coordination",
+      {
+        title: "Discover",
+        description:
+          "We learn about your business strategy, culture, leadership expectations, and hiring priorities.",
+      },
+      {
+        title: "Search",
+        description:
+          "Our consultants identify exceptional professionals through executive search, referrals, market mapping, and extensive talent networks.",
+      },
+      {
+        title: "Assess",
+        description:
+          "Every shortlisted candidate is evaluated for technical expertise, leadership capability, cultural alignment, and long-term potential.",
+      },
+      {
+        title: "Present",
+        description:
+          "You receive a refined shortlist supported by consultant insights and detailed evaluation summaries.",
+      },
+      {
+        title: "Secure",
+        description:
+          "We manage interviews, negotiations, reference verification, offer discussions, and onboarding coordination.",
+      },
+      {
+        title: "Grow",
+        description:
+          "Our relationship extends beyond hiring with onboarding support and continued partnership to help your business scale successfully.",
+      },
     ],
-    relatedSlugs: ["back-office", "advisory"],
+    relatedSlugs: [],
+    relatedCards: [
+      {
+        icon: "Workflow",
+        title: "Recruitment Process Outsourcing",
+        description:
+          "For clients scaling headcount quickly, we embed as an extension of your HR team — owning sourcing, screening, and coordination end-to-end while you retain final hiring authority. This is particularly effective for retail, FMCG, and manufacturing businesses opening new markets.",
+        href: "/contact",
+      },
+    ],
   },
 
   // ---------------- PILLAR: BACK OFFICE ----------------
@@ -106,24 +183,51 @@ export const services: Service[] = [
     shortDescription:
       "Grow your business, not your overhead — establish a fully managed back office with us.",
     heroTagline: "Operational weight, off your books.",
-    summary:
-      "Our back-office team handles the accounting, payroll, and audit work that keeps a business running — from a dedicated operations centre working in your time zone, on your systems, reporting to your standards.",
-    sections: [
+    heroImage: "/hero/back-office.jpg",
+    heroTitle: "Back Office",
+    heroSubtitle: "Efficient Processes. Stronger Foundations.",
+    summary: "",
+    sections: [],
+    serviceOfferings: [
       {
-        heading: "A dedicated team, not a ticketing queue",
-        body: "Clients are assigned a named team that learns their business, chart of accounts, and reporting cadence — rather than being routed through a rotating support desk. The team works your operating hours, joins your calls, and is reachable the way an in-house hire would be.",
+        title: "Remote Books And Accounting Services",
+        description:
+          "Day-to-day bookkeeping and accounting managed remotely — vouchers, reconciliations, payables/receivables tracking and periodic financial statements.",
+        points: [
+          "Daily/weekly transaction recording",
+          "Bank and ledger reconciliation",
+          "Periodic P&L, balance sheet and MIS output",
+        ],
       },
       {
-        heading: "Built on your infrastructure",
-        body: "We operate inside your existing ERP, accounting software, and document management systems wherever possible, minimising the transition burden and keeping your auditors and board reporting unaffected.",
+        title: "ERP Setup — Initial And Backend Services",
+        description:
+          "Complete first-time ERP implementation, including chart of accounts design, opening balances, and ongoing backend data entry and maintenance.",
+        points: [
+          "Company creation, ledger and inventory setup",
+          "Opening balance migration from existing records",
+          "Backend data-entry support on a recurring basis",
+        ],
       },
       {
-        heading: "Three specialisations",
-        body: "Accounting (daily transaction processing and financial reporting), Payroll (statutory compliance and salary administration), and Management Audit (independent operational review) — engaged individually or as a combined back office.",
+        title: "ERP Expert Services",
+        description:
+          "Specialist support on ERP — advanced configuration, troubleshooting, custom reports and best-practice usage for businesses already on the platform.",
+        points: [
+          "Diagnostic review of existing Tally usage",
+          "Custom report and voucher configuration",
+          "Ongoing expert helpdesk support",
+        ],
       },
       {
-        heading: "An alternative: staff at our premises",
-        body: "Some clients prefer to hire their own staff but house them at our Gurugram facility under our administrative and IT infrastructure — reducing office overhead without outsourcing the work itself. We can structure either model.",
+        title: "System Automation",
+        description:
+          "Designing and implementing automated workflows — accounting, inventory, billing, reporting — to reduce manual effort and error in day-to-day operations.",
+        points: [
+          "Process mapping and automation opportunity audit",
+          "Implementation of accounting/ERP-linked automations",
+          "Staff training on the automated workflow",
+        ],
       },
     ],
     benefits: [
@@ -133,7 +237,7 @@ export const services: Service[] = [
       "Single point of accountability for accuracy and turnaround",
       "Scales up or down with headcount, without hiring lead time",
     ],
-    relatedSlugs: ["accounting", "payroll", "management-audit", "advisory"],
+    relatedSlugs: ["payroll", "management-audit"],
   },
   {
     slug: "accounting",
@@ -260,20 +364,35 @@ export const services: Service[] = [
     shortDescription:
       "A dedicated finance professional acting as your Virtual CFO — strategy, financing, and structure.",
     heroTagline: "Senior finance leadership, without the full-time cost.",
+    heroImage: "/hero/virtual-cfo.jpg",
+    heroImagePosition: "top",
+    heroTitle: "Virtual Services",
+    heroSubtitle: "Financial Clarity. Strategic Growth.",
     summary:
-      "Our Virtual CFO service places an experienced finance leader inside your business — remotely, via cloud tools and periodic site visits — to close the gap between what your books say and what your business needs to grow.",
-    sections: [
+      "Revenue leakage, tax inefficiency, and weak financial visibility are rarely caused by bad intentions — they're caused by the absence of senior finance oversight. A Virtual CFO brings that oversight without the cost, hiring risk, or ramp-up time of a full-time executive hire.",
+    sections: [],
+    serviceOfferings: [
       {
-        heading: "Why businesses need this",
-        body: "Revenue leakage, tax inefficiency, and weak financial visibility are rarely caused by bad intentions — they're caused by the absence of senior finance oversight. A Virtual CFO brings that oversight without the cost, hiring risk, or ramp-up time of a full-time executive hire.",
+        title: "Virtual CFO",
+        description:
+          "Senior financial leadership delivered remotely — budgeting, cash-flow management, MIS reporting, fundraising support and board-level financial guidance for businesses that cannot yet justify a full-time CFO.",
+        points: [
+          "Monthly MIS, Dashboards, budgeting and cash-flow oversight",
+          "Investor / lender-ready financial reporting",
+          "Strategic input on pricing, costing and growth decisions",
+          "Development of Cost Sheets and Models",
+          "Development of Strategy for FOREX buying, selling and Hedging",
+        ],
       },
       {
-        heading: "A team, not one person",
-        body: "Engaging ScaleBridge gives you access to a team spanning corporate advisory, financing, M&A, and financial re-engineering — versus the single point of failure (and single skill set) of one in-house CFO hire.",
-      },
-      {
-        heading: "Six specialist services",
-        body: "Corporate Advisory, Financing & Capital Raise, Feasibility Studies, Mergers & Acquisitions, Financial Re-engineering, and Emerging Markets Advisory — engaged individually or as an integrated CFO mandate.",
+        title: "Virtual Director Services",
+        description:
+          "Independent, part-time directorial oversight — governance guidance, strategic review and accountability for promoter-led businesses that need an experienced outside voice on key decisions.",
+        points: [
+          "Periodic strategy and governance review",
+          "Independent perspective on major decisions",
+          "Support preparing for board meetings and investor discussions",
+        ],
       },
     ],
     benefits: [
@@ -283,12 +402,9 @@ export const services: Service[] = [
       "Long-term strategic partner, not a transactional consultant",
     ],
     relatedSlugs: [
-      "corporate-advisory",
       "financing",
-      "feasibility-study",
-      "mergers-acquisitions",
       "financial-re-engineering",
-      "emerging-markets-advisory",
+      "feasibility-study",
     ],
   },
   {
@@ -301,28 +417,63 @@ export const services: Service[] = [
     shortDescription:
       "Shareholder-value analysis to improve profitability, cash flow, and organisational efficiency.",
     heroTagline: "Strategy grounded in your numbers, not a template.",
+    heroImage: "/hero/corporate-advisory.jpg",
+    heroImagePosition: "top",
+    heroTitle: "Corporate Advisory",
+    heroSubtitle: "Strategy. Scale. Sustainable Growth.",
     summary:
       "We review your business the way an incoming investor would — costs, cash conversion, organisational structure, and controls — and turn that review into a prioritised plan for improving shareholder value.",
-    sections: [
+    sections: [],
+    serviceOfferings: [
       {
-        heading: "Corporate restructuring",
-        body: "Identifying organisational bloat, redundant reporting layers, and operational inefficiency that quietly erode margin.",
+        title: "Business Advisory Services",
+        description:
+          "Hands-on advisory across pricing, costing, working-capital, vendor negotiation and operational efficiency — tailored to the specific pain points of each client.",
+        points: [
+          "Diagnostic review of the business's current state",
+          "Actionable recommendations with priority and impact",
+          "Periodic follow-up to track implementation",
+        ],
       },
       {
-        heading: "Business sustainability",
-        body: "Stress-testing the business model against demand, cost, and competitive shifts to build a model that survives beyond the current growth cycle.",
+        title: "FMCG Expert Opinion",
+        description:
+          "Sector-specific guidance for FMCG and manufacturing businesses — distribution strategy, route-to-market, pricing architecture and category benchmarking, drawing on our sector network.",
+        points: [
+          "Distribution and route-to-market assessment",
+          "Pricing and margin-structure benchmarking",
+          "Introductions within our FMCG network where relevant",
+        ],
       },
       {
-        heading: "Turn-around strategy",
-        body: "For businesses in distress, a structured recovery plan covering cost reduction, cash stabilisation, and stakeholder communication.",
+        title: "Project Discussion And Advisory",
+        description:
+          "Structured sounding-board sessions for new projects or expansion plans — feasibility input, risk flagging and a second opinion before capital is committed.",
+        points: [
+          "Structured project review sessions",
+          "Feasibility and risk-flagging input",
+          "Documented recommendations and next steps",
+        ],
       },
       {
-        heading: "MIS and decision support",
-        body: "Analytical management information systems and budgeting frameworks that give leadership a decision-ready view of the business, not a rear-view mirror.",
+        title: "Business Consultancy",
+        description:
+          "Broader consulting engagements covering business-plan development, process redesign, and organisational structuring for businesses in a growth or turnaround phase.",
+        points: [
+          "Business plan and structure development",
+          "Process and organisational redesign support",
+          "Implementation roadmap with milestones",
+        ],
       },
       {
-        heading: "Tax planning and internal controls",
-        body: "Offshore structuring, double-taxation-treaty planning across our markets, insurance and premium review, and internal control audits across production, supply chain, and IT.",
+        title: "Business Survey",
+        description:
+          "On-ground and desk-based market/competitor surveys — mapping demand, pricing, competitor presence and distribution gaps in a defined territory or sector.",
+        points: [
+          "Defined-scope market/competitor survey",
+          "Structured findings report with data",
+          "Recommendations based on survey insights",
+        ],
       },
     ],
     benefits: [
@@ -330,7 +481,16 @@ export const services: Service[] = [
       "Tax and structuring guidance specific to your operating markets",
       "Independent view free from internal reporting bias",
     ],
-    relatedSlugs: ["advisory", "financial-re-engineering", "financing"],
+    relatedSlugs: [],
+    relatedCards: [
+      {
+        icon: "HeartHandshake",
+        title: "Help as a Friend in Business",
+        description:
+          "An informal, always-available sounding board — beyond the scope of a formal engagement — for promoters who simply need a trusted, experienced voice to think through a decision.",
+        href: "/contact",
+      },
+    ],
   },
   {
     slug: "financing",

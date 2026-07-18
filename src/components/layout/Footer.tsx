@@ -11,6 +11,13 @@ import {
 } from "@/components/ui/SocialIcons";
 import { site, footerQuickLinks } from "@/lib/data/site";
 
+const footerServices = [
+  { name: "Talent Acquisition", href: "/services/talent-acquisition" },
+  { name: "Back Office", href: "/services/back-office" },
+  { name: "Virtual Services", href: "/services/advisory" },
+  { name: "Corporate Advisory", href: "/services/corporate-advisory" },
+];
+
 const footerRegions = [
   { name: "Asia", slug: "asia" },
   { name: "Africa", slug: "africa" },
@@ -124,6 +131,22 @@ export function Footer() {
           <div>
             <h3 className="text-sm font-semibold tracking-wide text-gold-600 uppercase">
               Latest Blogs
+            </h3>
+            <ul className="mt-4 space-y-3">
+              {footerServices.map((service) => (
+                <li key={service.name}>
+                  <Link
+                    href={service.href}
+                    className="text-sm text-navy-700 transition-colors hover:text-navy-950"
+                  >
+                    {service.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <h3 className="mt-8 text-sm font-semibold tracking-wide text-gold-600 uppercase">
+              Latest News
             </h3>
             <ul className="mt-4 space-y-3">
               {footerRegions.map((region) => (

@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <IntroSection />
-      <HeroCarousel />
+      <HeroCarousel heading="Our Services" />
     </>
   );
 }

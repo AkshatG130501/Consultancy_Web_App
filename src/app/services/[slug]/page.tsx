@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { CheckCircle2 } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PageHero } from "@/components/sections/PageHero";
+import { ImageHero } from "@/components/sections/ImageHero";
 import { CTABand } from "@/components/sections/CTABand";
 import { ServiceCard } from "@/components/cards/ServiceCard";
+import { JourneyFlow } from "@/components/decorative/JourneyFlow";
+import { DynamicIcon } from "@/components/ui/DynamicIcon";
 import {
   services,
   getServiceBySlug,
@@ -45,10 +48,25 @@ export default async function ServiceDetailPage({
   const children = service.pillar ? getChildren(service.slug) : [];
   const related = service.relatedSlugs
     .map((s) => getServiceBySlug(s))
-    .filter((s): s is NonNullable<typeof s> => Boolean(s) && s!.slug !== service.slug);
+    .filter(
+      (s): s is NonNullable<typeof s> => Boolean(s) && s!.slug !== service.slug,
+    );
+
+  // These pillars show a "Related" section (like Talent Acquisition) rather than
+  // the "Within this practice" specialist grid.
+  const relatedStylePillars = ["back-office", "advisory"];
+  // Pages that render the "Related" section with tighter spacing above it.
+  const tightRelatedSpacing = ["back-office", "advisory", "corporate-advisory"];
+  const showPractice =
+    service.pillar &&
+    children.length > 0 &&
+    !relatedStylePillars.includes(service.slug);
+  const showRelated =
+    !showPractice &&
+    (related.length > 0 || (service.relatedCards?.length ?? 0) > 0);
 
   const crumbs = service.pillar
-    ? [{ label: category.title }]
+    ? [{ label: service.heroTitle ?? category.title }]
     : [
         { label: category.title, href: `/services/${category.slug}` },
         { label: service.title },
@@ -56,52 +74,84 @@ export default async function ServiceDetailPage({
 
   return (
     <>
-      <PageHero
-        eyebrow={category.title}
-        title={service.heroTagline}
-        description={service.shortDescription}
-        crumbs={crumbs}
-      />
+      {service.heroImage ? (
+        <ImageHero
+          title={service.heroTitle ?? service.title}
+          tagline={service.heroSubtitle}
+          image={service.heroImage}
+          position={service.heroImagePosition}
+          crumbs={crumbs}
+        />
+      ) : (
+        <PageHero
+          eyebrow={category.title}
+          title={service.heroTagline}
+          description={service.shortDescription}
+          crumbs={crumbs}
+        />
+      )}
 
-      <section className="bg-white py-20">
+      <section
+        className={
+          tightRelatedSpacing.includes(service.slug)
+            ? "bg-white pt-24 pb-12"
+            : "bg-white py-24"
+        }
+      >
         <Container className="grid grid-cols-1 gap-16 lg:grid-cols-[1.6fr_1fr]">
           <div>
-            <p className="text-lg leading-relaxed text-navy-800/90">
-              {service.summary}
-            </p>
+            {service.summary && (
+              <p className="text-base leading-relaxed text-justify text-navy-700/80 sm:text-lg">
+                {service.summary}
+              </p>
+            )}
 
-            <div className="mt-12 space-y-10">
+            {service.serviceOfferings && service.serviceOfferings.length > 0 && (
+              <div className={service.summary ? "mt-14" : ""}>
+                <h2 className="font-serif-display text-2xl font-medium text-navy-950">
+                  Our Services
+                </h2>
+                <div className="mt-8 space-y-8">
+                  {service.serviceOfferings.map((offering) => (
+                    <div key={offering.title}>
+                      <h3 className="font-serif-display text-2xl font-medium text-navy-950">
+                        {offering.title}
+                      </h3>
+                      <p className="mt-2 text-base leading-relaxed text-justify text-navy-700/80">
+                        {offering.description}
+                      </p>
+                      <ul className="mt-4 space-y-2">
+                        {offering.points.map((point) => (
+                          <li
+                            key={point}
+                            className="flex items-start gap-2.5"
+                          >
+                            <Check className="mt-0.5 size-4 shrink-0 text-gold-600" />
+                            <span className="text-sm leading-relaxed text-navy-800">
+                              {point}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div className="mt-12 space-y-8">
               {service.sections.map((section) => (
                 <div key={section.heading}>
-                  <h3 className="font-serif-display text-xl font-medium text-navy-950">
+                  <h3 className="font-serif-display text-2xl font-medium text-navy-950">
                     {section.heading}
                   </h3>
-                  <p className="mt-2.5 leading-relaxed text-navy-700/80">
+                  <p className="mt-2 text-base leading-relaxed text-justify text-navy-700/80">
                     {section.body}
                   </p>
                 </div>
               ))}
             </div>
 
-            {service.processSteps && (
-              <div className="mt-14">
-                <h3 className="font-serif-display text-xl font-medium text-navy-950">
-                  How the process works
-                </h3>
-                <ol className="mt-6 space-y-4">
-                  {service.processSteps.map((step, i) => (
-                    <li key={step} className="flex gap-4">
-                      <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-gold-100 text-xs font-semibold text-gold-700">
-                        {i + 1}
-                      </span>
-                      <span className="pt-0.5 text-sm leading-relaxed text-navy-700/80">
-                        {step}
-                      </span>
-                    </li>
-                  ))}
-                </ol>
-              </div>
-            )}
           </div>
 
           <aside className="space-y-8">
@@ -109,9 +159,11 @@ export default async function ServiceDetailPage({
               <h3 className="font-semibold text-navy-950">Why it works</h3>
               <ul className="mt-4 space-y-3">
                 {service.benefits.map((benefit) => (
-                  <li key={benefit} className="flex gap-2.5 text-sm text-navy-700/80">
-                    <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-gold-600" />
-                    <span>{benefit}</span>
+                  <li key={benefit} className="flex items-start gap-2.5">
+                    <Check className="mt-0.5 size-4 shrink-0 text-gold-600" />
+                    <span className="text-sm leading-relaxed text-navy-800">
+                      {benefit}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -136,8 +188,21 @@ export default async function ServiceDetailPage({
         </Container>
       </section>
 
-      {service.pillar && children.length > 0 && (
-        <section className="bg-cream-100 py-20">
+      {service.processSteps && (
+        <section className="border-y border-slate-200/70 bg-slate-50 py-24">
+          <Container>
+            <h2 className="font-serif-display text-2xl font-medium text-navy-950 sm:text-3xl">
+              The Talent Acquisition Journey
+            </h2>
+            <div className="mt-10">
+              <JourneyFlow steps={service.processSteps} />
+            </div>
+          </Container>
+        </section>
+      )}
+
+      {showPractice && (
+        <section className="bg-cream-100 py-24">
           <Container>
             <SectionHeading
               eyebrow="Within this practice"
@@ -152,18 +217,60 @@ export default async function ServiceDetailPage({
         </section>
       )}
 
-      {!service.pillar && related.length > 0 && (
-        <section className="bg-cream-100 py-20">
-          <Container>
-            <SectionHeading eyebrow="Related" title="You might also need" />
-            <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {related.slice(0, 3).map((r) => (
-                <ServiceCard key={r.slug} service={r} />
-              ))}
-            </div>
-          </Container>
-        </section>
-      )}
+      {showRelated && (
+          <section
+            className={
+              tightRelatedSpacing.includes(service.slug)
+                ? "bg-white pt-0 pb-24"
+                : "bg-white py-24"
+            }
+          >
+            <Container>
+              <SectionHeading eyebrow="Related" title="You might also need" />
+              <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {service.relatedCards?.map((card) => {
+                  const content = (
+                    <>
+                      <div className="flex size-12 items-center justify-center rounded-xl bg-gold-100 text-gold-600">
+                        <DynamicIcon name={card.icon} className="size-5" />
+                      </div>
+                      <h3 className="mt-6 font-serif-display text-xl font-medium text-navy-950">
+                        {card.title}
+                      </h3>
+                      <p className="mt-3 flex-1 text-sm leading-relaxed text-navy-700/70">
+                        {card.description}
+                      </p>
+                      {card.href && (
+                        <span className="mt-6 flex items-center gap-1.5 text-sm font-semibold text-gold-700">
+                          Learn more
+                          <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+                        </span>
+                      )}
+                    </>
+                  );
+                  const base =
+                    "group flex flex-col rounded-2xl border border-navy-950/10 bg-white p-8 shadow-sm shadow-navy-950/5 ring-1 ring-navy-950/[0.02]";
+                  return card.href ? (
+                    <Link
+                      key={card.title}
+                      href={card.href}
+                      className={`${base} transition-all duration-200 hover:-translate-y-1 hover:border-gold-500/50 hover:shadow-xl hover:shadow-navy-950/10`}
+                    >
+                      {content}
+                    </Link>
+                  ) : (
+                    <div key={card.title} className={base}>
+                      {content}
+                    </div>
+                  );
+                })}
+                {related.slice(0, 3).map((r) => (
+                  <ServiceCard key={r.slug} service={r} />
+                ))}
+              </div>
+            </Container>
+          </section>
+        )}
 
       <CTABand />
     </>

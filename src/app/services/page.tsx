@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Executive search & RPO, back-office solutions, and CFO advisory services for businesses operating across Africa, the Middle East, and Asia.",
+    "Talent acquisition & RPO, back-office solutions, and CFO advisory services for businesses operating across Africa, the Middle East, and Asia.",
 };
 
 export default function ServicesPage() {

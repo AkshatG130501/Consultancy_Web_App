@@ -18,7 +18,7 @@ export const jobs: Job[] = [
     location: "Nairobi, Kenya",
     region: "Africa",
     type: "Full-time, client mandate",
-    department: "Executive Search",
+    department: "Talent Acquisition",
     postedDate: "2026-06-20",
     summary:
       "A leading East African agri-processing group is seeking a CFO to lead finance strategy across a multi-country operating footprint, reporting directly to the Group CEO.",
@@ -41,7 +41,7 @@ export const jobs: Job[] = [
     location: "Dubai, UAE",
     region: "Middle East",
     type: "Full-time, client mandate",
-    department: "Executive Search",
+    department: "Talent Acquisition",
     postedDate: "2026-06-12",
     summary:
       "A multinational retail group is hiring a Regional HR Director to lead people strategy across GCC operations during a period of rapid store expansion.",
@@ -107,10 +107,10 @@ export const jobs: Job[] = [
     location: "Lagos, Nigeria",
     region: "Africa",
     type: "Full-time, ScaleBridge team",
-    department: "Executive Search",
+    department: "Talent Acquisition",
     postedDate: "2026-05-15",
     summary:
-      "Lead our West Africa executive search practice, owning client relationships and mandate delivery across Nigeria, Ghana, and the wider ECOWAS region.",
+      "Lead our West Africa talent acquisition practice, owning client relationships and mandate delivery across Nigeria, Ghana, and the wider ECOWAS region.",
     responsibilities: [
       "Own client relationships for existing and new mandates across West Africa",
       "Lead search execution for C-suite and senior management mandates",
@@ -118,7 +118,7 @@ export const jobs: Job[] = [
       "Represent ScaleBridge at regional industry events and client forums",
     ],
     requirements: [
-      "10+ years in executive search, HR leadership, or management consulting",
+      "10+ years in talent acquisition, HR leadership, or management consulting",
       "Established professional network across Nigeria and West Africa",
       "Comfortable operating with significant autonomy in a client-facing role",
     ],

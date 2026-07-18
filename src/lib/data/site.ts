@@ -3,7 +3,7 @@ export const site = {
   shortName: "ScaleBridge",
   tagline: "Empowering Businesses. Beyond Borders.",
   description:
-    "ScaleBridge Global is a boutique management consulting firm helping ambitious businesses across global emerging markets scale with confidence — through executive search, back-office operations, and strategic CFO advisory.",
+    "ScaleBridge Global is a boutique management consulting firm helping ambitious businesses across global emerging markets scale with confidence — through talent acquisition, back-office operations, and strategic CFO advisory.",
   url: "https://www.scalebridgeglobal.com",
   founded: 2012,
   email: "khandelwalvikrant1@gmail.com",
@@ -52,8 +52,8 @@ export const primaryNav: NavItem[] = [
     href: "/services",
     children: [
       {
-        title: "Executive Search",
-        slug: "executive-search",
+        title: "Talent Acquisition",
+        slug: "talent-acquisition",
         description: "Leadership hiring and recruitment process outsourcing",
       },
       {
@@ -62,7 +62,7 @@ export const primaryNav: NavItem[] = [
         description: "Finance, HR, payroll, compliance, and shared services",
       },
       {
-        title: "Virtual CFO",
+        title: "Virtual Services",
         slug: "advisory",
         description: "Fractional CFO leadership, reporting, and financing",
       },
@@ -88,7 +88,7 @@ export const primaryNav: NavItem[] = [
 ];
 
 export const footerServiceLinks = [
-  { title: "Executive Search & RPO", href: "/services/executive-search" },
+  { title: "Talent Acquisition & RPO", href: "/services/talent-acquisition" },
   { title: "Accounting", href: "/services/accounting" },
   { title: "Payroll Management", href: "/services/payroll" },
   { title: "Management Audit", href: "/services/management-audit" },
@@ -111,8 +111,8 @@ export const footerCompanyLinks = [
 
 export const footerQuickLinks = [
   { title: "About Us", href: "/about" },
-  { title: "Executive Search", href: "/services/executive-search" },
-  { title: "Virtual CFO", href: "/services/advisory" },
+  { title: "Talent Acquisition", href: "/services/talent-acquisition" },
+  { title: "Virtual Services", href: "/services/advisory" },
   { title: "Back Office", href: "/services/back-office" },
   { title: "Corporate Advisory", href: "/services/corporate-advisory" },
   { title: "Blog", href: "/blogs" },

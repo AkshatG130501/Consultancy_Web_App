@@ -67,7 +67,7 @@ export default async function OpengraphImage() {
             color: "rgba(250,248,244,0.65)",
           }}
         >
-          Executive Search · Back-Office · CFO Advisory
+          Talent Acquisition · Back-Office · CFO Advisory
         </div>
       </div>
     ),

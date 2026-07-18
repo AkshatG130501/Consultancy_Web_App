@@ -15,7 +15,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "We've used their executive search team for three C-suite mandates now. Every shortlist was tight, well-referenced, and delivered on schedule — no filler candidates.",
+      "We've used their talent acquisition team for three C-suite mandates now. Every shortlist was tight, well-referenced, and delivered on schedule — no filler candidates.",
     name: "Group HR Director",
     role: "FMCG Manufacturing Group",
     location: "Lagos, Nigeria",

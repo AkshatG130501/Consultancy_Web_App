@@ -92,7 +92,7 @@ function GradientMock({ theme }: { theme: ThemePreview }) {
             for ambitious businesses.
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-(--muted)">
-            Executive search, back-office operations, and CFO advisory across
+            Talent acquisition, back-office operations, and CFO advisory across
             Africa, the Middle East, and Asia.
           </p>
           <div className="mt-5 flex items-center gap-3">
@@ -136,7 +136,7 @@ function GradientMock({ theme }: { theme: ThemePreview }) {
       {/* Service cards (glass) */}
       <div className="relative grid grid-cols-1 gap-3 px-6 py-8 sm:grid-cols-3">
         {[
-          { icon: Users, title: "Executive Search" },
+          { icon: Users, title: "Talent Acquisition" },
           { icon: Building2, title: "Back-Office" },
           { icon: LineChart, title: "CFO Advisory" },
         ].map(({ icon: Icon, title }) => (
@@ -231,7 +231,7 @@ function FlatMock({ theme }: { theme: ThemePreview }) {
             Clarity in complexity for ambitious businesses.
           </h2>
           <p className="mt-3 text-sm leading-relaxed" style={{ color: mutedInk }}>
-            Executive search, back-office operations, and CFO advisory across
+            Talent acquisition, back-office operations, and CFO advisory across
             Africa, the Middle East, and Asia.
           </p>
           <div className="mt-5 flex items-center gap-3">
@@ -275,7 +275,7 @@ function FlatMock({ theme }: { theme: ThemePreview }) {
       {/* Service cards */}
       <div className="relative grid grid-cols-1 sm:grid-cols-3">
         {[
-          { icon: Users, title: "Executive Search" },
+          { icon: Users, title: "Talent Acquisition" },
           { icon: Building2, title: "Back-Office" },
           { icon: LineChart, title: "CFO Advisory" },
         ].map(({ icon: Icon, title }, i) => (

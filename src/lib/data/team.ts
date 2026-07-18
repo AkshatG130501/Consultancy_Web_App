@@ -19,7 +19,7 @@ export const team: TeamMember[] = [
   {
     slug: "tushar-vir",
     name: "Tushar Vir",
-    role: "Founder & Managing Partner",
+    role: "Founder",
     group: "Leadership",
     bio: "Tushar founded ScaleBridge Global in 2012 after a decade in corporate finance across India, East Africa, and Central Europe. He is a Chartered Accountant and has led debt syndication and M&A mandates totalling more than USD 250 million.",
     focus: "Corporate finance, M&A, capital raising",
@@ -29,7 +29,7 @@ export const team: TeamMember[] = [
   {
     slug: "vikrant-khandelwal",
     name: "Vikrant Khandelwal",
-    role: "Founder & Managing Partner",
+    role: "Founder",
     group: "Leadership",
     bio: "Vikrant leads client relationships and internal talent development. A graduate of Delhi University with postgraduate training in organisational communication, he has worked across European, Asian, and African client mandates for over a decade.",
     focus: "Client strategy, quality control, team development",
@@ -51,7 +51,7 @@ export const team: TeamMember[] = [
     name: "Tara Kapoor",
     role: "Principal Consultant",
     group: "Management Consulting",
-    bio: "MBA with 8+ years in executive search, managing mandates across East and West Africa. Specialises in finance and operations leadership placements.",
+    bio: "MBA with 8+ years in talent acquisition, managing mandates across East and West Africa. Specialises in finance and operations leadership placements.",
     focus: "Finance & operations leadership, Africa",
     initials: "TK",
   },

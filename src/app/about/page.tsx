@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 const differentiators = [
   {
     icon: Check,
-    title: "We Stay Until It Works",
+    title: "Hands-on Execution",
     description:
       "We don't simply recommend solutions — we work alongside our clients to implement them, measure outcomes, and continuously improve performance.",
     image: "/hero/virtual-cfo.jpg",
@@ -37,31 +37,23 @@ const differentiators = [
     image: "/page/services.jpg",
   },
   {
-    icon: Wrench,
-    title: "Hands-on Execution",
-    description:
-      "Strategy has value only when it is successfully implemented. Our consultants stay actively involved until solutions are delivering measurable results.",
     image: "/hero/back-office.jpg",
   },
   {
     icon: Network,
     title: "Cross-Functional Expertise",
     description:
-      "Integrated capabilities spanning Executive Search, HR, Finance, Operations, Business Processes, Organization Design, and Corporate Strategy.",
+      "We have integrated capabilities spanning Talent Acquisition, HR, Finance, Operations, Business Processes, Organization Design, and Corporate Strategy.",
     image: "/page/team.jpg",
   },
   {
     icon: GlobeIcon,
     title: "Global Experience",
     description:
-      "We bring global best practices while respecting local realities — with professionals who have worked across Asia, Africa, the Middle East, and Europe.",
+      "We bring global best practices while respecting local realities — with professionals having conceptual and practical expertise and who have worked in different countries and across industries.",
     image: "/page/about.jpg",
   },
   {
-    icon: Handshake,
-    title: "Trusted Growth Partner",
-    description:
-      "From a start-up building its first leadership team to an established company entering new markets, we become an extension of our clients' leadership.",
     image: "/hero/executive-search.jpg",
   },
 ];
@@ -86,7 +78,7 @@ const methodology = [
       "Understand the business, objectives, challenges, stakeholders, and current operating environment.",
   },
   {
-    title: "Design",
+    title: "Develop",
     description:
       "Develop practical solutions aligned with business strategy and organizational priorities.",
   },
@@ -101,7 +93,7 @@ const methodology = [
       "Track outcomes through measurable KPIs and business performance indicators.",
   },
   {
-    title: "Sustain",
+    title: "Support",
     description:
       "Provide continuous support to ensure long-term success and continuous improvement.",
   },
@@ -127,7 +119,7 @@ const industries = [
 
 const reasons = [
   "Senior professionals with extensive industry experience",
-  "Practical solutions rather than theoretical recommendations",
+  "Cost-effective, practical solutions that maximize ROI",
   "International exposure across diverse markets",
   "Confidential and ethical engagement practices",
   "Personalized attention from experienced consultants",
@@ -138,7 +130,7 @@ const reasons = [
 
 function AboutHero() {
   return (
-    <section className="relative isolate overflow-hidden bg-white py-20 sm:py-28">
+    <section className="relative isolate overflow-hidden bg-white py-16 sm:py-20">
       <GridPattern className="text-navy-950/[0.04]" />
       <div className="absolute -top-24 -right-24 -z-10 size-[36rem] rounded-full bg-gold-600/10 blur-3xl" />
       <Container className="grid grid-cols-1 items-stretch gap-14 lg:grid-cols-[1.5fr_1fr] lg:gap-20">
@@ -157,8 +149,8 @@ function AboutHero() {
             operations, and create financial excellence.
           </p>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-justify text-navy-700/80 sm:text-lg">
-            From executive search and leadership hiring to back-office setup,
-            Virtual CFO services, and strategic business advisory, we help
+            From talent acquisition and leadership hiring to back-office setup,
+            Virtual Services, and strategic business advisory, we help
             businesses build the foundation required for sustainable growth.
           </p>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-justify text-navy-700/80 sm:text-lg">
@@ -197,7 +189,7 @@ function AboutHero() {
 
 function OurStory() {
   return (
-    <section className="bg-white py-24">
+    <section className="bg-white py-14">
       <Container className="grid grid-cols-1 items-stretch gap-14 lg:grid-cols-2 lg:gap-20">
         <div>
           <SectionHeading
@@ -236,8 +228,8 @@ function OurStory() {
         <div className="relative lg:h-full">
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-xl shadow-navy-950/10 ring-1 ring-navy-950/10 lg:aspect-auto lg:h-full">
             <Image
-              src="/page/careers.jpg"
-              alt="Experienced advisors working together"
+              src="/page/our-story.jpg"
+              alt="Experienced advisors celebrating a client result"
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover"
@@ -246,11 +238,10 @@ function OurStory() {
           </div>
           <div className="absolute -bottom-6 -left-6 hidden items-center gap-6 rounded-2xl bg-white p-5 shadow-xl shadow-navy-950/15 ring-1 ring-navy-950/[0.04] sm:flex">
             <div>
-              <p className="font-serif-display text-3xl font-medium text-navy-950">
-                {site.stats[2].value}
-              </p>
-              <p className="mt-0.5 text-xs text-navy-700/70">
-                {site.stats[2].label}
+              <p className="font-serif-display text-xl leading-snug font-medium text-navy-950">
+                Empowering Businesses.
+                <br />
+                Beyond Borders.
               </p>
             </div>
           </div>
@@ -262,16 +253,18 @@ function OurStory() {
 
 function Differentiators() {
   return (
-    <section className="bg-white py-24">
-      <Container className="grid grid-cols-1 items-start gap-14 lg:grid-cols-2 lg:gap-20">
+    <section className="bg-white py-14">
+      <Container className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-20">
         {/* Left: heading + points — this column scrolls */}
         <div>
           <SectionHeading
             eyebrow="Our USP"
             descriptionClassName="text-justify"
           />
-          <div className="mt-10 space-y-8">
-            {differentiators.map((item) => (
+          <div className="mt-4 space-y-5">
+            {differentiators
+              .filter((item) => item.title)
+              .map((item) => (
               <div key={item.title}>
                 <h3 className="font-serif-display text-2xl font-medium text-navy-950">
                   {item.title}
@@ -284,10 +277,9 @@ function Differentiators() {
           </div>
         </div>
 
-        {/* Right: sticky circular cluster — one image per point, stays put
-            while the points on the left scroll past. Pinned below the 128px
-            (h-32) sticky navbar so the top image is never tucked behind it. */}
-        <div className="lg:sticky lg:top-36">
+        {/* Right: circular cluster — one image per point, vertically centered
+            against the list of points and scrolling normally with the page. */}
+        <div>
           <div className="relative mx-auto aspect-square w-full max-w-md">
             {/* dashed orbit ring */}
             <div className="absolute inset-[17%] rounded-full border border-dashed border-navy-950/15" />
@@ -303,19 +295,19 @@ function Differentiators() {
             {/* orbiting images */}
             {differentiators.map((item, i) => (
               <div
-                key={item.title}
+                key={item.image}
                 style={orbitPositions[i]}
                 className="absolute size-28 -translate-x-1/2 -translate-y-1/2 sm:size-32"
               >
                 <div className="group relative size-full overflow-hidden rounded-full shadow-lg shadow-navy-950/15 ring-4 ring-white">
                   <Image
                     src={item.image}
-                    alt={item.title}
+                    alt={item.title ?? ""}
                     fill
                     sizes="128px"
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <span className="sr-only">{item.title}</span>
+                  {item.title && <span className="sr-only">{item.title}</span>}
                 </div>
               </div>
             ))}
@@ -328,18 +320,17 @@ function Differentiators() {
 
 function Methodology() {
   return (
-    <section className="bg-white py-24">
+    <section className="bg-white py-14">
       <Container className="grid grid-cols-1 items-stretch gap-14 lg:grid-cols-2 lg:gap-20">
         {/* Left: heading + numbered steps */}
         <div>
           <SectionHeading
             eyebrow="Our methodology"
-            title="A structured, yet flexible framework"
             titleClassName="text-2xl sm:text-3xl sm:whitespace-nowrap"
             description="Every engagement follows the same disciplined path — from understanding your business to sustaining the results long after delivery."
             descriptionClassName="text-justify"
           />
-          <ol className="mt-10 space-y-4">
+          <ol className="mt-5 space-y-3">
             {methodology.map((step) => (
               <li key={step.title}>
                 <h3 className="font-serif-display text-2xl font-medium text-navy-950">
@@ -357,7 +348,7 @@ function Methodology() {
         <div className="relative lg:h-full">
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-xl shadow-navy-950/10 ring-1 ring-navy-950/10 lg:aspect-auto lg:h-full">
             <Image
-              src="/page/methodology.jpg"
+              src="/page/methodology.png"
               alt="Our consulting methodology in practice"
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
@@ -373,12 +364,13 @@ function Methodology() {
 
 function GlobalPresence() {
   return (
-    <section className="bg-white py-24">
+    <section className="bg-white py-14">
       <Container className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-20">
         <div>
           <SectionHeading
             eyebrow="Global presence"
             title="Building businesses. Beyond borders."
+            titleClassName="text-2xl sm:text-3xl sm:whitespace-nowrap"
             description="Our professionals have worked with organizations across Asia, Africa, the Middle East, Europe, and emerging markets — bringing global best practices while respecting local business realities."
             descriptionClassName="text-justify"
           />
@@ -408,7 +400,7 @@ function GlobalPresence() {
 
 function Industries() {
   return (
-    <section className="bg-white py-24">
+    <section className="bg-white py-14">
       <Container className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-20">
         <div className="relative lg:order-2">
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-xl shadow-navy-950/10 ring-1 ring-navy-950/10">
@@ -447,13 +439,14 @@ function Industries() {
 
 function WhyChooseUs() {
   return (
-    <section className="bg-white py-24">
+    <section className="bg-white py-14">
       <Container className="grid grid-cols-1 items-stretch gap-14 lg:grid-cols-2 lg:gap-20">
         {/* Left: heading + reasons */}
         <div>
           <SectionHeading
             eyebrow="Why clients choose us"
             title="A partner invested in your outcomes"
+            titleClassName="text-2xl sm:text-3xl sm:whitespace-nowrap"
             description="Our approach combines strategic thinking with practical execution — measured by the results we deliver, not the hours we bill."
             descriptionClassName="text-justify"
           />
@@ -489,7 +482,7 @@ function WhyChooseUs() {
 
 function Vision() {
   return (
-    <section className="bg-white py-24">
+    <section className="bg-white py-14">
       <Container className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-20">
         <div>
           <p className="mb-3 flex items-center gap-2 text-sm font-semibold tracking-wide text-gold-600 uppercase">
@@ -521,7 +514,7 @@ function Vision() {
 
 function Mission() {
   return (
-    <section className="bg-white py-24">
+    <section className="bg-white py-14">
       <Container className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-20">
         <div className="lg:order-1">
           <p className="mb-3 flex items-center gap-2 text-sm font-semibold tracking-wide text-gold-600 uppercase">
@@ -554,27 +547,27 @@ function Mission() {
 const founders = [
   {
     name: "Vikrant Khandelwal",
-    role: "Co-Founder & Managing Partner",
+    role: "Co-Founder",
     image: "/founders/vikrant-khandelwal.jpg",
-    bio: "Vikrant leads client relationships and talent development, drawing on more than a decade of work across European, Asian, and African mandates. He focuses on client strategy, quality control, and building the firm's consulting team.",
+    bio: "A Chartered Accountant, Vikrant drives the firm's operations and advisory practice, partnering with clients to build scalable processes and resilient financial foundations that support long-term growth.",
   },
   {
     name: "Tushar Vir",
-    role: "Co-Founder & Managing Partner",
+    role: "Co-Founder",
     image: "/founders/tushar-vir.jpg",
-    bio: "A Chartered Accountant, Tushar has led debt syndication and M&A mandates across India, East Africa, and Central Europe. He anchors the firm's corporate finance, capital-raising, and advisory practice.",
+    bio: "A Chemical Engineer from IIT and HR lead from TISS Mumbai, Tushar led the HR fucntions for last 20 years at country, region and group levels. He has expertise in process improvements, change management and customer experience",
   },
   {
-    name: "Brajesh Kumawat",
-    role: "Co-Founder & Managing Partner",
+    name: "Brijesh Kumawat",
+    role: "Executive Member",
     image: "/founders/brajesh-kumawat.jpg",
-    bio: "Brajesh drives the firm's operations and advisory practice, partnering with clients to build scalable processes and resilient financial foundations that support long-term growth.",
+    bio: "A finance professional, Brijesh has worked across various industries and has expertise in revnue growth profitability and performance improvements.",
   },
 ];
 
 function Founders() {
   return (
-    <section className="bg-white py-24">
+    <section className="bg-white py-14">
       <Container>
         <SectionHeading
           align="center"
@@ -601,7 +594,7 @@ function Founders() {
               <p className="mt-1 text-sm font-semibold tracking-wide text-gold-700 uppercase">
                 {founder.role}
               </p>
-              <p className="mt-3 text-sm leading-relaxed text-navy-700/75">
+              <p className="mt-3 text-sm leading-relaxed text-justify text-navy-700/75">
                 {founder.bio}
               </p>
             </div>
