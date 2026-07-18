@@ -21,7 +21,7 @@ export const site = {
     youtube: "https://www.youtube.com/@scalebridgeglobal",
     twitter: "https://x.com/scalebridgeglobal",
   },
-  regions: ["Africa", "Middle East", "Southeast Asia", "South Asia"],
+  regions: ["Asia", "Africa", "Middle East"],
   stats: [
     { value: "300+", label: "Clients advised" },
     { value: "40+", label: "Countries served" },
