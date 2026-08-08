@@ -56,7 +56,7 @@ function GradientMock({ theme }: { theme: ThemePreview }) {
           >
             N
           </span>
-          ScaleBridge
+          Vertex
         </div>
         <div className="hidden items-center gap-6 text-sm font-medium text-(--muted) sm:flex">
           <span>About</span>
@@ -174,7 +174,7 @@ function GradientMock({ theme }: { theme: ThemePreview }) {
         className="relative flex items-center justify-between px-6 py-5 text-xs"
         style={{ background: hexToRgba(theme.mode === "dark" ? "#000000" : from, theme.mode === "dark" ? 0.35 : 0.06), color: mutedInk }}
       >
-        <span>© 2026 ScaleBridge Global</span>
+        <span>© 2026 Vertex</span>
         <span className="flex gap-3">
           <span className="size-5 rounded-full" style={{ background: hexToRgba(ink, 0.1) }} />
           <span className="size-5 rounded-full" style={{ background: hexToRgba(ink, 0.1) }} />
@@ -204,7 +204,7 @@ function FlatMock({ theme }: { theme: ThemePreview }) {
           >
             N
           </span>
-          ScaleBridge
+          Vertex
         </div>
         <div className="hidden items-center gap-6 text-sm font-semibold sm:flex" style={{ color: mutedInk }}>
           <span>About</span>
@@ -321,7 +321,7 @@ function FlatMock({ theme }: { theme: ThemePreview }) {
         className="relative flex items-center justify-between border-t-2 px-6 py-5 text-xs font-semibold"
         style={{ borderColor: ink, background: ink, color: "#ffffff" }}
       >
-        <span>© 2026 ScaleBridge Global</span>
+        <span>© 2026 Vertex</span>
         <span className="flex gap-3">
           <span className="size-5 rounded-full border-2" style={{ borderColor: "#ffffff" }} />
           <span className="size-5 rounded-full border-2" style={{ borderColor: "#ffffff" }} />

@@ -21,7 +21,7 @@ export const team: TeamMember[] = [
     name: "Tushar Vir",
     role: "Founder",
     group: "Leadership",
-    bio: "Tushar founded ScaleBridge Global in 2012 after a decade in corporate finance across India, East Africa, and Central Europe. He is a Chartered Accountant and has led debt syndication and M&A mandates totalling more than USD 250 million.",
+    bio: "Tushar founded Vertex in 2012 after a decade in corporate finance across India, East Africa, and Central Europe. He is a Chartered Accountant and has led debt syndication and M&A mandates totalling more than USD 250 million.",
     focus: "Corporate finance, M&A, capital raising",
     initials: "TV",
     image: "/team/tushar-vir.jpg",

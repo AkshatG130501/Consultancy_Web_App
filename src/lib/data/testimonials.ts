@@ -8,7 +8,7 @@ export type Testimonial = {
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "ScaleBridge set up our finance function from scratch and ran it better than most in-house teams we'd worked with. Their reporting gave our board confidence within the first quarter.",
+      "Vertex set up our finance function from scratch and ran it better than most in-house teams we'd worked with. Their reporting gave our board confidence within the first quarter.",
     name: "Group Finance Director",
     role: "Logistics & Freight Group",
     location: "Maputo, Mozambique",
@@ -29,7 +29,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "As a candidate placed through ScaleBridge, their process was the most professionally run search I've been part of — clear communication at every stage, from screening to offer.",
+      "As a candidate placed through Vertex, their process was the most professionally run search I've been part of — clear communication at every stage, from screening to offer.",
     name: "Regional Commercial Director",
     role: "Placed Executive",
     location: "Dubai, UAE",

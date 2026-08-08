@@ -34,9 +34,9 @@ export function Logo({
     <Link href="/" className={cn("inline-flex flex-col items-center", className)}>
       <Image
         src="/logo.png"
-        alt="ScaleBridge Global"
-        width={630}
-        height={396}
+        alt="Vertex Business Consulting"
+        width={645}
+        height={387}
         priority
         className={cn("w-auto", sizeStyles[size])}
       />

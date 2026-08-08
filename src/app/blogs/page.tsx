@@ -8,7 +8,7 @@ import { insights, blogCategories } from "@/lib/data/insights";
 export const metadata: Metadata = {
   title: "Blogs",
   description:
-    "Perspectives on talent acquisition, back-office operations, and financial advisory from the ScaleBridge Global team.",
+    "Perspectives on talent acquisition, back-office operations, and financial advisory from the Vertex team.",
 };
 
 export default function BlogsPage() {

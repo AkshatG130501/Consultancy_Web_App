@@ -1,13 +1,13 @@
 export const site = {
-  name: "ScaleBridge Global",
-  shortName: "ScaleBridge",
-  tagline: "Empowering Businesses. Beyond Borders.",
+  name: "Vertex",
+  shortName: "Vertex",
+  tagline: "Turnaround Businesses. Beyond Boundaries",
   description:
-    "ScaleBridge Global is a boutique management consulting firm helping ambitious businesses across global emerging markets scale with confidence — through talent acquisition, back-office operations, and strategic CFO advisory.",
-  url: "https://www.scalebridgeglobal.com",
+    "Vertex is a boutique management consulting firm helping ambitious businesses across global emerging markets scale with confidence — through talent acquisition, back-office operations, and strategic CFO advisory.",
+  url: "https://www.vertexglobal.com",
   founded: 2012,
   email: "khandelwalvikrant1@gmail.com",
-  careersEmail: "careers@scalebridgeglobal.com",
+  careersEmail: "careers@vertexglobal.com",
   phone: "+91 89553 14742",
   address: {
     line1: "5/10 Malviya Nagar, Amit Bhardwaj Marg",
@@ -15,11 +15,11 @@ export const site = {
     line3: "India, 302017",
   },
   social: {
-    linkedin: "https://www.linkedin.com/company/scalebridge-global",
-    instagram: "https://www.instagram.com/scalebridgeglobal",
+    linkedin: "https://www.linkedin.com/company/vertex-global",
+    instagram: "https://www.instagram.com/vertexglobal",
     whatsapp: "https://wa.me/918955314742",
-    youtube: "https://www.youtube.com/@scalebridgeglobal",
-    twitter: "https://x.com/scalebridgeglobal",
+    youtube: "https://www.youtube.com/@vertexglobal",
+    twitter: "https://x.com/vertexglobal",
   },
   regions: ["Asia", "Africa", "Middle East"],
   stats: [

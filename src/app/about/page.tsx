@@ -18,7 +18,7 @@ import { site } from "@/lib/data/site";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "ScaleBridge Global is a boutique business consulting firm helping ambitious organizations build stronger leadership, scalable operations, and financial excellence across Africa, the Middle East, and Asia.",
+    "Vertex is a boutique business consulting firm helping ambitious organizations build stronger leadership, scalable operations, and financial excellence across Africa, the Middle East, and Asia.",
 };
 
 const differentiators = [
@@ -165,7 +165,7 @@ function AboutHero() {
           <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-2xl shadow-navy-950/20 ring-1 ring-navy-950/10 lg:aspect-auto lg:h-full">
             <Image
               src="/page/about.jpg"
-              alt="ScaleBridge Global advisory team in discussion"
+              alt="Vertex advisory team in discussion"
               fill
               priority
               sizes="(min-width: 1024px) 40vw, 100vw"

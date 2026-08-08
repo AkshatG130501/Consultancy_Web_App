@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { BrandMark } from "@/components/decorative/BrandMark";
 import { cn } from "@/lib/utils";
@@ -101,7 +103,7 @@ export function HeroCarousel({
         {/* Fixed brand panel — full carousel height, square from sm: up (narrower on mobile
             so it doesn't crowd the text). Width is mirrored by the content's ml-* below. */}
         {showBrand && (
-          <div className="absolute inset-y-0 left-0 z-20 w-24 sm:w-[300px] lg:w-[340px]">
+          <div className="absolute inset-y-0 left-0 z-20 w-24 sm:w-[340px] lg:w-[400px] xl:w-[470px]">
             <BrandMark />
           </div>
         )}
@@ -113,7 +115,7 @@ export function HeroCarousel({
               <p
                 className={cn(
                   "flex items-center gap-2.5 text-sm font-semibold tracking-wide text-white uppercase drop-shadow-sm",
-                  showBrand && "ml-[120px] sm:ml-[324px] lg:ml-[364px]",
+                  showBrand && "ml-[120px] sm:ml-[364px] lg:ml-[424px] xl:ml-[494px]",
                 )}
               >
                 <span className="h-px w-6 bg-gold-500" />
@@ -159,20 +161,29 @@ export function HeroCarousel({
                 <div
                   className={cn(
                     "max-w-2xl",
-                    showBrand && "ml-[120px] sm:ml-[324px] lg:ml-[364px]",
+                    showBrand && "ml-[120px] sm:ml-[364px] lg:ml-[424px] xl:ml-[494px]",
                     i === active && "animate-fade-up",
                   )}
                 >
-                  <h1 className="font-serif-display text-4xl leading-[0.92] font-semibold tracking-tight text-white uppercase sm:text-5xl lg:text-7xl xl:text-8xl">
-                    {slide.service.split(" ").map((word) => (
-                      <span key={word} className="block">
-                        {word}
-                      </span>
-                    ))}
-                  </h1>
-                  <p className="mt-6 max-w-md text-base font-medium tracking-wide text-cream-50/70 sm:text-lg">
-                    {slide.benefit}
-                  </p>
+                  {/* The whole headline block links to the service page. Slides
+                      that aren't active are `inert`, so only the visible link
+                      is reachable by keyboard. */}
+                  <Link href={slide.href} className="group block">
+                    <h1 className="font-serif-display text-4xl leading-[0.92] font-semibold tracking-tight text-white uppercase sm:text-5xl lg:text-7xl xl:text-8xl">
+                      {slide.service.split(" ").map((word) => (
+                        <span key={word} className="block">
+                          {word}
+                        </span>
+                      ))}
+                    </h1>
+                    <p className="mt-6 max-w-md text-base font-medium tracking-wide text-cream-50/70 sm:text-lg">
+                      {slide.benefit}
+                    </p>
+                    <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-white uppercase">
+                      Explore service
+                      <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-1" />
+                    </span>
+                  </Link>
                 </div>
               </Container>
             </div>
@@ -184,7 +195,9 @@ export function HeroCarousel({
         <div
           className={cn(
             "absolute right-0 bottom-0 z-30 flex h-1 gap-1.5",
-            showBrand ? "left-24 sm:left-[300px] lg:left-[340px]" : "left-0",
+            showBrand
+              ? "left-24 sm:left-[340px] lg:left-[400px] xl:left-[470px]"
+              : "left-0",
           )}
         >
           {slides.map((slide, i) => (

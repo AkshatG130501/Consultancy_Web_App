@@ -62,7 +62,7 @@ export const jobs: Job[] = [
     title: "Senior Accountant — Back-Office Operations",
     location: "Gurugram, India (Hybrid)",
     region: "South Asia",
-    type: "Full-time, ScaleBridge team",
+    type: "Full-time, Vertex team",
     department: "Back-Office Solutions",
     postedDate: "2026-06-05",
     summary:
@@ -84,7 +84,7 @@ export const jobs: Job[] = [
     title: "M&A Analyst",
     location: "Gurugram, India",
     region: "South Asia",
-    type: "Full-time, ScaleBridge team",
+    type: "Full-time, Vertex team",
     department: "CFO & Advisory Services",
     postedDate: "2026-05-28",
     summary:
@@ -106,7 +106,7 @@ export const jobs: Job[] = [
     title: "Regional Lead — West Africa",
     location: "Lagos, Nigeria",
     region: "Africa",
-    type: "Full-time, ScaleBridge team",
+    type: "Full-time, Vertex team",
     department: "Talent Acquisition",
     postedDate: "2026-05-15",
     summary:
@@ -115,7 +115,7 @@ export const jobs: Job[] = [
       "Own client relationships for existing and new mandates across West Africa",
       "Lead search execution for C-suite and senior management mandates",
       "Build and maintain candidate networks across priority sectors",
-      "Represent ScaleBridge at regional industry events and client forums",
+      "Represent Vertex at regional industry events and client forums",
     ],
     requirements: [
       "10+ years in talent acquisition, HR leadership, or management consulting",
@@ -128,7 +128,7 @@ export const jobs: Job[] = [
     title: "Payroll Specialist — Multi-Country",
     location: "Remote (Africa & Middle East time zones)",
     region: "Africa / Middle East",
-    type: "Full-time, ScaleBridge team",
+    type: "Full-time, Vertex team",
     department: "Back-Office Solutions",
     postedDate: "2026-05-02",
     summary:

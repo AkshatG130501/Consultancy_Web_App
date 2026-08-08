@@ -60,7 +60,7 @@ export const insights: Insight[] = [
   },
   {
     slug: "welcome-samuel-okafor",
-    title: "Welcome to ScaleBridge, Samuel Okafor",
+    title: "Welcome to Vertex, Samuel Okafor",
     excerpt:
       "We're pleased to welcome Samuel Okafor as our new West Africa Regional Lead, bringing over 25 years of HR and operations leadership to the team.",
     category: "Africa News",
@@ -68,7 +68,7 @@ export const insights: Insight[] = [
     readTime: "2 min read",
     author: "Vikrant Khandelwal",
     content: [
-      "We're pleased to announce that Samuel Okafor has joined ScaleBridge Global as West Africa Regional Lead, based out of our Lagos coverage team.",
+      "We're pleased to announce that Samuel Okafor has joined Vertex as West Africa Regional Lead, based out of our Lagos coverage team.",
       "Samuel brings more than 25 years of HR and operations leadership experience across manufacturing and FMCG businesses in Nigeria, Ghana, and the wider ECOWAS region — deep, operator-level knowledge that strengthens our talent acquisition practice across the region.",
       "His arrival reflects our continued investment in on-the-ground presence across the markets we serve, rather than running regional mandates from a single hub.",
     ],
